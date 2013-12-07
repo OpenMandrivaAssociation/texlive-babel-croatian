@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-babel-croatian
 Version:	20131013
-Release:	2
+Release:	3
 Summary:	TeXLive babel-croatian package
 Group:		Publishing
 URL:		http://tug.org/texlive
