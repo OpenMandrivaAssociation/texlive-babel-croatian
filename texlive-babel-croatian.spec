@@ -1,19 +1,13 @@
-# revision 30260
-# category Package
-# catalog-ctan undef
-# catalog-date undef
-# catalog-license undef
-# catalog-version undef
 Name:		texlive-babel-croatian
-Version:	1.3l
-Release:	2
+Version:	35198
+Release:	1
 Summary:	TeXLive babel-croatian package
 Group:		Publishing
 URL:		http://tug.org/texlive
 License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.r35198.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.doc.r35198.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.source.r35198.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -23,12 +17,12 @@ Requires(post):	texlive-kpathsea
 TeXLive babel-croatian package.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -40,7 +34,8 @@ TeXLive babel-croatian package.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
