@@ -1,6 +1,6 @@
 Name:		texlive-babel-croatian
 Version:	35198
-Release:	1
+Release:	2
 Summary:	TeXLive babel-croatian package
 Group:		Publishing
 URL:		http://tug.org/texlive
