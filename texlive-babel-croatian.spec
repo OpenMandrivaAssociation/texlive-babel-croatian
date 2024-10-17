@@ -3,7 +3,7 @@ Version:	35198
 Release:	2
 Summary:	TeXLive babel-croatian package
 Group:		Publishing
-URL:		http://tug.org/texlive
+URL:		https://tug.org/texlive
 License:	http://www.tug.org/texlive/LICENSE.TL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.doc.r%{version}.tar.xz
