@@ -1,44 +1,25 @@
-Name:		texlive-babel-croatian
-Version:	35198
-Release:	2
-Summary:	TeXLive babel-croatian package
+%global tl_name babel-croatian
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.3l
+Release:	%{tl_revision}.1
+Summary:	Babel contributed support for Croatian
 Group:		Publishing
-URL:		https://tug.org/texlive
-License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.source.r%{version}.tar.xz
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/babel-contrib/croatian
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-croatian.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-TeXLive babel-croatian package.
+The package establishes Croatian conventions in a document (or a subset
+of the conventions, if Croatian is not the main language of the
+document).
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/generic/babel-croatian/croatian.ldf
-%doc %{_texmfdistdir}/doc/generic/babel-croatian/croatian.pdf
-#- source
-%doc %{_texmfdistdir}/source/generic/babel-croatian/croatian.dtx
-%doc %{_texmfdistdir}/source/generic/babel-croatian/croatian.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
